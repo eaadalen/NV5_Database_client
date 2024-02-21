@@ -14,7 +14,7 @@ export const LoginView = ({ onLoggedIn }) => {
     };
 
     fetch(
-      "https://desolate-everglades-87695-c2e8310ae46d.herokuapp.com/login?Username=" +
+      "https://blooming-gorge-72776-95bc6a7cbd30.herokuapp.com/login?Username=" +
         username +
         "&Password=" +
         password,

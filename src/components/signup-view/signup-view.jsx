@@ -19,7 +19,7 @@ export const SignupView = () => {
     };
 
     fetch(
-      "https://desolate-everglades-87695-c2e8310ae46d.herokuapp.com/users",
+      "https://blooming-gorge-72776-95bc6a7cbd30.herokuapp.com/users",
       {
         method: "POST",
         body: JSON.stringify(data),

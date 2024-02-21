@@ -41456,7 +41456,7 @@ const LoginView = ({ onLoggedIn })=>{
             Username: username,
             Password: password
         };
-        fetch("https://desolate-everglades-87695-c2e8310ae46d.herokuapp.com/login?Username=" + username + "&Password=" + password, {
+        fetch("https://blooming-gorge-72776-95bc6a7cbd30.herokuapp.com/login?Username=" + username + "&Password=" + password, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -41585,7 +41585,7 @@ const SignupView = ()=>{
             Email: email,
             Birthday: birthday
         };
-        fetch("https://desolate-everglades-87695-c2e8310ae46d.herokuapp.com/users", {
+        fetch("https://blooming-gorge-72776-95bc6a7cbd30.herokuapp.com/users", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
