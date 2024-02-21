@@ -122,7 +122,12 @@ export const MainView = () => {
                   <Navigate to="/login" replace />
                 ) : (
                   <Col md={8}>
-                    <ProjectView user={user}/>
+                    <ProjectView 
+                      user={user}
+                      token={token} 
+                      setUser={setUser} 
+                      projects={projects}
+                    />
                   </Col>
                 )}
               </>

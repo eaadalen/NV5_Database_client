@@ -27180,7 +27180,10 @@ const MainView = ()=>{
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                     md: 8,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _projectView.ProjectView), {
-                                        user: user
+                                        user: user,
+                                        token: token,
+                                        setUser: setUser,
+                                        projects: projects
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
                                         lineNumber: 125,
@@ -27244,20 +27247,6 @@ var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _projectCardScss = require("./project-card.scss");
 const ProjectCard = ({ project, token, setUser, user })=>{
-    const addFavorite = ()=>{
-        fetch("https://blooming-gorge-72776-95bc6a7cbd30.herokuapp.com/" + String(user.Username) + "/profiles/" + String(project._id), {
-            method: "POST",
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then(async (response)=>{
-            if (response.ok) {
-                const data = await response.json();
-                setUser(data);
-                alert(String(project.Title) + " added to favorites");
-            } else alert("Failed to add " + String(project.Title) + " to favorites");
-        });
-    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
         className: "h-100",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
@@ -27266,21 +27255,14 @@ const ProjectCard = ({ project, token, setUser, user })=>{
                     children: project.Title
                 }, void 0, false, {
                     fileName: "src/components/project-card/project-card.jsx",
-                    lineNumber: 30,
+                    lineNumber: 11,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
                     children: project.ProjectNumber
                 }, void 0, false, {
                     fileName: "src/components/project-card/project-card.jsx",
-                    lineNumber: 31,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
-                    children: project.Description
-                }, void 0, false, {
-                    fileName: "src/components/project-card/project-card.jsx",
-                    lineNumber: 32,
+                    lineNumber: 12,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -27290,23 +27272,23 @@ const ProjectCard = ({ project, token, setUser, user })=>{
                         children: "Open"
                     }, void 0, false, {
                         fileName: "src/components/project-card/project-card.jsx",
-                        lineNumber: 34,
+                        lineNumber: 14,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/project-card/project-card.jsx",
-                    lineNumber: 33,
+                    lineNumber: 13,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/project-card/project-card.jsx",
-            lineNumber: 29,
+            lineNumber: 10,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/project-card/project-card.jsx",
-        lineNumber: 28,
+        lineNumber: 9,
         columnNumber: 5
     }, undefined);
 };
@@ -41982,10 +41964,6 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactRouter = require("react-router");
 var _reactRouterDom = require("react-router-dom");
 var _projectViewScss = require("./project-view.scss");
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
 var _s = $RefreshSig$();
 const ProjectView = ({ projects })=>{
     _s();
@@ -41999,20 +41977,20 @@ const ProjectView = ({ projects })=>{
                         children: "Title: "
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
-                        lineNumber: 14,
+                        lineNumber: 12,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: project.Title
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
-                        lineNumber: 15,
+                        lineNumber: 13,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/project-view/project-view.jsx",
-                lineNumber: 13,
+                lineNumber: 11,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -42021,20 +41999,20 @@ const ProjectView = ({ projects })=>{
                         children: "Project Number: "
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
-                        lineNumber: 18,
+                        lineNumber: 16,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: project.ProjectNumber
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
-                        lineNumber: 19,
+                        lineNumber: 17,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/project-view/project-view.jsx",
-                lineNumber: 17,
+                lineNumber: 15,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -42043,20 +42021,20 @@ const ProjectView = ({ projects })=>{
                         children: "Description: "
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
-                        lineNumber: 22,
+                        lineNumber: 20,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: project.Description
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
-                        lineNumber: 23,
+                        lineNumber: 21,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/project-view/project-view.jsx",
-                lineNumber: 21,
+                lineNumber: 19,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -42066,18 +42044,18 @@ const ProjectView = ({ projects })=>{
                     children: "Back"
                 }, void 0, false, {
                     fileName: "src/components/project-view/project-view.jsx",
-                    lineNumber: 26,
+                    lineNumber: 24,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/project-view/project-view.jsx",
-                lineNumber: 25,
+                lineNumber: 23,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/project-view/project-view.jsx",
-        lineNumber: 12,
+        lineNumber: 10,
         columnNumber: 5
     }, undefined);
 };
@@ -42095,6 +42073,6 @@ $RefreshReg$(_c, "ProjectView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router":"dbWyW","react-router-dom":"9xmpe","./project-view.scss":"6hgv8","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6hgv8":[function() {},{}],"lJZlQ":[function() {},{}]},["5qIsR","1xC6H","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"react/jsx-dev-runtime":"iTorj","react-router":"dbWyW","react-router-dom":"9xmpe","./project-view.scss":"6hgv8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6hgv8":[function() {},{}],"lJZlQ":[function() {},{}]},["5qIsR","1xC6H","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

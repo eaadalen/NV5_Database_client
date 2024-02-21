@@ -1,8 +1,6 @@
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import "./project-view.scss";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 export const ProjectView = ({ projects }) => {
   const { projectId } = useParams();
