@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ProjectCard } from "../project-card/project-card";
 import { ProjectView } from "../project-view/project-view";
+import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import { UpdateView } from "../profile-view/update-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
@@ -99,7 +100,7 @@ export const MainView = () => {
                       ? project
                       : project.Title.toLowerCase().includes(search.toLowerCase());
                     }).map((project) => (
-                      <Col className="mb-4" key={project._id} md={3}>
+                      <Col className="mb-4" key={project._id} md={12}>
                         <ProjectCard 
                           project={project}
                           token={token}
