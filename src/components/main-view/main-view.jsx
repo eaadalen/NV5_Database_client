@@ -4,8 +4,7 @@ import { ProjectView } from "../project-view/project-view";
 import { SignupView } from "../signup-view/signup-view";
 import { UpdateView } from "../profile-view/update-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+import {Col, Row, Container, Button, Card, Form } from 'react-bootstrap';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 export const MainView = () => {
@@ -14,6 +13,7 @@ export const MainView = () => {
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [projects, setProjects] = useState([]);
+  const [search, setSearch] = useState(""); 
 
   useEffect(() => {
     if (!token) {
@@ -85,7 +85,20 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    {projects.map((project) => (
+                    <Form>
+                      <Form.Control
+                        className="mx-5 mx-md-0"
+                        type="search"
+                        id="searchForm"
+                        onChange={(e) => setSearch(e.target.value)}
+                        placeholder="Search..."
+                      />
+                    </Form>
+                    {projects.filter((project) => {
+                      return search === ""
+                      ? project
+                      : project.Title.toLowerCase().includes(search.toLowerCase());
+                    }).map((project) => (
                       <Col className="mb-4" key={project._id} md={3}>
                         <ProjectCard 
                           project={project}
