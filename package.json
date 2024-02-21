@@ -13,14 +13,14 @@
     "react": "18.0.0",
     "react-bootstrap": "^2.10.1",
     "react-dom": "18.0.0",
-    "react-router": "^6.18.0",
-    "react-router-dom": "^6.18.0",
+    "react-router": "^6.22.1",
+    "react-router-dom": "^6.22.1",
     "react-scripts": "4.0.0",
     "redux": "^4.2.1"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.10.2",
-    "parcel": "^2.10.2",
+    "@parcel/transformer-sass": "^2.11.0",
+    "parcel": "^2.11.0",
     "process": "^0.11.10"
   }
 }
