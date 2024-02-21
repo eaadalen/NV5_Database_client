@@ -10,16 +10,28 @@ export const ProjectView = ({ user, token, projects, setUser }) => {
   return (
     <div>
       <div>
-        <span>Title: </span>
+        <span STYLE="font-weight:bold">Title: </span>
         <span>{project.Title}</span>
       </div>
       <div>
-        <span>Project Number: </span>
+        <span STYLE="font-weight:bold">Project Number: </span>
         <span>{project.ProjectNumber}</span>
       </div>
       <div>
-        <span>Description: </span>
-        <span>{project.Description}</span>
+        <span STYLE="font-weight:bold">File Location: </span>
+        <span>{project.FileLocation}</span>
+      </div>
+      <div>
+        <span STYLE="font-weight:bold">Project Manager: </span>
+        <span>{project.ProjectManager}</span>
+      </div>
+      <div>
+        <span STYLE="font-weight:bold">Project Staff: </span>
+        <span>{project.ProjectStaff}</span>
+      </div>
+      <div>
+        <span STYLE="font-weight:bold">Systems/Equipment Used: </span>
+        <span>{project.Systems_and_Equipment}</span>
       </div>
       <Link to={`/`}>
         <button className="back-button">Back</button>

@@ -27168,7 +27168,7 @@ const MainView = ()=>{
                                     lineNumber: 121,
                                     columnNumber: 27
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                    md: 8,
+                                    md: 12,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _projectView.ProjectView), {
                                         user: user,
                                         token: token,
@@ -27259,6 +27259,9 @@ const ProjectCard = ({ project, token, setUser, user })=>{
                     to: `/projects/${encodeURIComponent(project._id)}`,
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                         variant: "link",
+                        style: {
+                            color: "black"
+                        },
                         children: "Open"
                     }, void 0, false, {
                         fileName: "src/components/project-card/project-card.jsx",
@@ -41965,6 +41968,7 @@ const ProjectView = ({ user, token, projects, setUser })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        STYLE: "font-weight:bold",
                         children: "Title: "
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
@@ -41987,6 +41991,7 @@ const ProjectView = ({ user, token, projects, setUser })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        STYLE: "font-weight:bold",
                         children: "Project Number: "
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
@@ -42009,14 +42014,15 @@ const ProjectView = ({ user, token, projects, setUser })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: "Description: "
+                        STYLE: "font-weight:bold",
+                        children: "File Location: "
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
                         lineNumber: 21,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: project.Description
+                        children: project.FileLocation
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
                         lineNumber: 22,
@@ -42028,6 +42034,75 @@ const ProjectView = ({ user, token, projects, setUser })=>{
                 lineNumber: 20,
                 columnNumber: 7
             }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        STYLE: "font-weight:bold",
+                        children: "Project Manager: "
+                    }, void 0, false, {
+                        fileName: "src/components/project-view/project-view.jsx",
+                        lineNumber: 25,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: project.ProjectManager
+                    }, void 0, false, {
+                        fileName: "src/components/project-view/project-view.jsx",
+                        lineNumber: 26,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/project-view/project-view.jsx",
+                lineNumber: 24,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        STYLE: "font-weight:bold",
+                        children: "Project Staff: "
+                    }, void 0, false, {
+                        fileName: "src/components/project-view/project-view.jsx",
+                        lineNumber: 29,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: project.ProjectStaff
+                    }, void 0, false, {
+                        fileName: "src/components/project-view/project-view.jsx",
+                        lineNumber: 30,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/project-view/project-view.jsx",
+                lineNumber: 28,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        STYLE: "font-weight:bold",
+                        children: "Systems/Equipment Used: "
+                    }, void 0, false, {
+                        fileName: "src/components/project-view/project-view.jsx",
+                        lineNumber: 33,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: project.Systems_and_Equipment
+                    }, void 0, false, {
+                        fileName: "src/components/project-view/project-view.jsx",
+                        lineNumber: 34,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/project-view/project-view.jsx",
+                lineNumber: 32,
+                columnNumber: 7
+            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                 to: `/`,
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -42035,12 +42110,12 @@ const ProjectView = ({ user, token, projects, setUser })=>{
                     children: "Back"
                 }, void 0, false, {
                     fileName: "src/components/project-view/project-view.jsx",
-                    lineNumber: 25,
+                    lineNumber: 37,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/project-view/project-view.jsx",
-                lineNumber: 24,
+                lineNumber: 36,
                 columnNumber: 7
             }, undefined)
         ]

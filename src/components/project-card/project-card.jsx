@@ -11,7 +11,7 @@ export const ProjectCard = ({ project, token, setUser, user }) => {
         <Card.Title>{project.Title}</Card.Title>
         <Card.Text>{project.ProjectNumber}</Card.Text>
         <Link to={`/projects/${encodeURIComponent(project._id)}`}>
-          <Button variant="link">Open</Button>
+          <Button variant="link" style={{color:'black'}}>Open</Button>
         </Link>
       </Card.Body>
     </Card>
