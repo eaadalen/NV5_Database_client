@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ProjectCard } from "../project-card/project-card";
-import { LoginView } from "../login-view/login-view";
+import { ProjectView } from "../project-view/project-view";
 import { SignupView } from "../signup-view/signup-view";
 import { UpdateView } from "../profile-view/update-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
@@ -109,6 +109,20 @@ export const MainView = () => {
                 ) : (
                   <Col md={8}>
                     <UpdateView user={user}/>
+                  </Col>
+                )}
+              </>
+            }
+          />
+          <Route
+            path="/project/:projectID"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : (
+                  <Col md={8}>
+                    <ProjectView user={user}/>
                   </Col>
                 )}
               </>
