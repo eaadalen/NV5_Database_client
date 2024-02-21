@@ -101,29 +101,13 @@ export const MainView = () => {
             }
           />
           <Route
-            path="/profile/:userID/updateinfo"
+            path="/projects/:projectID"
             element={
               <>
-                {!user ? (
-                  <Navigate to="/login" replace />
-                ) : (
+                {!user ? (<Navigate to="/login" replace />) : (
                   <Col md={8}>
-                    <UpdateView user={user}/>
-                  </Col>
-                )}
-              </>
-            }
-          />
-          <Route
-            path="/project/:projectID"
-            element={
-              <>
-                {!user ? (
-                  <Navigate to="/login" replace />
-                ) : (
-                  <Col md={8}>
-                    <ProjectView 
-                      user={user}
+                    <ProfileView 
+                      user={user} 
                       token={token} 
                       setUser={setUser} 
                       projects={projects}
