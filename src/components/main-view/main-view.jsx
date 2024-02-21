@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { MovieCard } from "../movie-card/movie-card";
-import { MovieView } from "../movie-view/movie-view";
-import { ProfileView } from "../profile-view/profile-view";
+import { ProjectCard } from "../project-card/project-card";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import { UpdateView } from "../profile-view/update-view";
@@ -15,7 +13,7 @@ export const MainView = () => {
   const storedToken = localStorage.getItem("token");
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
-  const [movies, setMovies] = useState([]);
+  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     if (!token) {
@@ -23,14 +21,14 @@ export const MainView = () => {
     }
 
     fetch(
-      "https://desolate-everglades-87695-c2e8310ae46d.herokuapp.com/movies",
+      "https://blooming-gorge-72776-95bc6a7cbd30.herokuapp.com/projects",
       {
         headers: { Authorization: `Bearer ${token}` }
       }
     )
       .then((response) => response.json())
       .then((data) => {
-        setMovies(data);
+        setProjects(data);
       });
   }, [token]);
 
@@ -83,14 +81,14 @@ export const MainView = () => {
               <>
                 {!user ? (
                   <Navigate to="/login" replace />
-                ) : movies.length === 0 ? (
+                ) : projects.length === 0 ? (
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    {movies.map((movie) => (
-                      <Col className="mb-4" key={movie._id} md={3}>
-                        <MovieCard 
-                          movie={movie}
+                    {projects.map((project) => (
+                      <Col className="mb-4" key={project._id} md={3}>
+                        <ProjectCard 
+                          project={project}
                           token={token}
                           setUser={setUser}
                           user={user} 
@@ -98,39 +96,6 @@ export const MainView = () => {
                       </Col>
                     ))}
                   </>
-                )}
-              </>
-            }
-          />
-          <Route
-            path="/profile/:userID"
-            element={
-              <>
-                {!user ? (<Navigate to="/login" replace />) : (
-                  <Col md={8}>
-                    <ProfileView 
-                      user={user} 
-                      token={token} 
-                      setUser={setUser} 
-                      movies={movies}
-                    />
-                  </Col>
-                )}
-              </>
-            }
-          />
-          <Route
-            path="/movies/:movieId"
-            element={
-              <>
-                {!user ? (
-                  <Navigate to="/login" replace />
-                ) : movies.length === 0 ? (
-                  <Col>The list is empty!</Col>
-                ) : (
-                  <Col md={8}>
-                    <MovieView movies={movies} />
-                  </Col>
                 )}
               </>
             }
