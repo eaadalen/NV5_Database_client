@@ -27149,7 +27149,7 @@ const MainView = ()=>{
                                     columnNumber: 27
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                     md: 8,
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ProfileView, {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _projectView.ProjectView), {
                                         user: user,
                                         token: token,
                                         setUser: setUser,
@@ -41937,8 +41937,9 @@ var _projectViewScss = require("./project-view.scss");
 var _s = $RefreshSig$();
 const ProjectView = ({ user, token, projects, setUser })=>{
     _s();
-    const { projectId } = (0, _reactRouter.useParams)();
-    const project = projects.find((b)=>b._id === projectId);
+    const { projectID } = (0, _reactRouter.useParams)();
+    const project = projects.find((b)=>b._id === projectID);
+    console.log(project);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41947,20 +41948,20 @@ const ProjectView = ({ user, token, projects, setUser })=>{
                         children: "Title: "
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
-                        lineNumber: 12,
+                        lineNumber: 13,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: project.Title
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
-                        lineNumber: 13,
+                        lineNumber: 14,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/project-view/project-view.jsx",
-                lineNumber: 11,
+                lineNumber: 12,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41969,20 +41970,20 @@ const ProjectView = ({ user, token, projects, setUser })=>{
                         children: "Project Number: "
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
-                        lineNumber: 16,
+                        lineNumber: 17,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: project.ProjectNumber
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
-                        lineNumber: 17,
+                        lineNumber: 18,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/project-view/project-view.jsx",
-                lineNumber: 15,
+                lineNumber: 16,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41991,20 +41992,20 @@ const ProjectView = ({ user, token, projects, setUser })=>{
                         children: "Description: "
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
-                        lineNumber: 20,
+                        lineNumber: 21,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: project.Description
                     }, void 0, false, {
                         fileName: "src/components/project-view/project-view.jsx",
-                        lineNumber: 21,
+                        lineNumber: 22,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/project-view/project-view.jsx",
-                lineNumber: 19,
+                lineNumber: 20,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -42014,22 +42015,22 @@ const ProjectView = ({ user, token, projects, setUser })=>{
                     children: "Back"
                 }, void 0, false, {
                     fileName: "src/components/project-view/project-view.jsx",
-                    lineNumber: 24,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/project-view/project-view.jsx",
-                lineNumber: 23,
+                lineNumber: 24,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/project-view/project-view.jsx",
-        lineNumber: 10,
+        lineNumber: 11,
         columnNumber: 5
     }, undefined);
 };
-_s(ProjectView, "e33EhjYInum2JA3DpcLGJahOhO4=", false, function() {
+_s(ProjectView, "1lvYJut1QxMwl5u9Xh1AgfJIxVA=", false, function() {
     return [
         (0, _reactRouter.useParams)
     ];

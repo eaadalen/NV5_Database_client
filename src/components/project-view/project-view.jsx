@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import "./project-view.scss";
 
 export const ProjectView = ({ user, token, projects, setUser }) => {
-  const { projectId } = useParams();
-  const project = projects.find((b) => b._id === projectId);
+  const { projectID } = useParams();
+  const project = projects.find((b) => b._id === projectID);
+  console.log(project)
 
   return (
     <div>
