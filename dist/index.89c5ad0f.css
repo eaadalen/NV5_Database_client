@@ -26546,6 +26546,18 @@ textarea.form-control-lg {
   background-color: #2a6291;
 }
 
+.navbar-custom {
+  border: none;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: #fff !important;
+  background-color: #2a6291 !important;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+
 .back-button, .update-button, .delete-button {
   color: #f5f5f5;
   background-color: #2a6291;

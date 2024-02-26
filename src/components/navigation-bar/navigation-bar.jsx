@@ -2,12 +2,18 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../index.scss";
+import "./navigation-bar.css"
 
 export const NavigationBar = ({ user, onLoggedOut }) => {
+
+  const brandStyle = {
+    color: 'white' // Change color to your desired color
+  };
+
   return (
-    <Navbar class="dark" expand="lg">
+    <Navbar bg="dark" expand="lg" className="navbar-custom">
       <Container>
-        <Navbar.Brand>
+        <Navbar.Brand style={brandStyle}>
           NV5 Project Database
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
