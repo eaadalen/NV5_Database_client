@@ -1,69 +1,128 @@
 import { useState } from "react";
+import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-export const InputProjectView = ({ onLoggedIn }) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+export const InputProjectView = () => {
+  const [title, setTitle] = useState("");
+  const [projectnumber, setProjectNumber] = useState("");
+  const [description, setDescription] = useState("");
+  const [keywords, setKeywords] = useState("");
+  const [filelocation, setFileLocation] = useState("");
+  const [projectmanager, setProjectManager] = useState("");
+  const [projectstaff, setProjectStaff] = useState("");
+  const [systems_and_equipment, setSystems_and_Equipment] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const data = {
-      Username: username,
-      Password: password
+      Title: title,
+      ProjectNumber: projectnumber,
+      Description: description,
+      Keywords: keywords,
+      FileLocation: filelocation,
+      ProjectManager: projectmanager,
+      ProjectStaff: projectstaff,
+      Systems_and_Equipment: systems_and_equipment
     };
 
     fetch(
-      "https://blooming-gorge-72776-95bc6a7cbd30.herokuapp.com/login?Username=" +
-        username +
-        "&Password=" +
-        password,
+      "https://blooming-gorge-72776-95bc6a7cbd30.herokuapp.com/input-project",
       {
         method: "POST",
+        body: JSON.stringify(data),
         headers: {
           "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Login response: ", data);
-        if (data.user) {
-          localStorage.setItem("user", JSON.stringify(data.user));
-          localStorage.setItem("token", data.token);
-          onLoggedIn(data.user, data.token);
-        } else {
-          alert("No such user");
         }
-      })
-      .catch((e) => {
-        alert("Something went wrong");
-      });
+      }
+    ).then((response) => {
+      if (response.ok) {
+        alert("Signup successful");
+        window.location.reload();
+      } else {
+        alert("Signup failed");
+      }
+    });
   };
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Form.Group controlId="formUsername">
-        <Form.Label>Username:</Form.Label>
+      <Form.Group controlId="formTitle">
+        <Form.Label>Title:</Form.Label>
         <Form.Control
           type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
           required
-          minLength="3"
+          minLength="1"
         />
       </Form.Group>
-      <Form.Group controlId="formPassword">
-        <Form.Label>Password:</Form.Label>
+      <Form.Group controlId="formProjectNumber">
+        <Form.Label>Project Number:</Form.Label>
         <Form.Control
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          type="text"
+          value={projectnumber}
+          onChange={(e) => setProjectNumber(e.target.value)}
           required
         />
       </Form.Group>
-      <button className="update-button">Submit</button>
+      <Form.Group controlId="formDescription">
+        <Form.Label>Description:</Form.Label>
+        <Form.Control
+          type="text"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          required
+        />
+      </Form.Group>
+      <Form.Group controlId="formKeywords">
+        <Form.Label>Keywords:</Form.Label>
+        <Form.Control
+          type="text"
+          value={keywords}
+          onChange={(e) => setKeywords(e.target.value)}
+          required
+        />
+      </Form.Group>
+      <Form.Group controlId="formFileLocation">
+        <Form.Label>File Location:</Form.Label>
+        <Form.Control
+          type="text"
+          value={filelocation}
+          onChange={(e) => setFileLocation(e.target.value)}
+          required
+        />
+      </Form.Group>
+      <Form.Group controlId="formProjectManager">
+        <Form.Label>Project Manager:</Form.Label>
+        <Form.Control
+          type="text"
+          value={projectmanager}
+          onChange={(e) => setProjectManager(e.target.value)}
+          required
+        />
+      </Form.Group>
+      <Form.Group controlId="formProjectStaff">
+        <Form.Label>Project Staff:</Form.Label>
+        <Form.Control
+          type="text"
+          value={projectstaff}
+          onChange={(e) => setProjectStaff(e.target.value)}
+          required
+        />
+      </Form.Group>
+      <Form.Group controlId="formSystems_and_Equipment">
+        <Form.Label>Systems and Equipment:</Form.Label>
+        <Form.Control
+          type="text"
+          value={systems_and_equipment}
+          onChange={(e) => setSystems_and_Equipment(e.target.value)}
+          required
+        />
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
     </Form>
   );
 };

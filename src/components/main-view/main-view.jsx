@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 import { ProjectCard } from "../project-card/project-card";
 import { ProjectView } from "../project-view/project-view";
 import { LoginView } from "../login-view/login-view";
-import { SignupView } from "../signup-view/signup-view";
-import { UpdateView } from "../profile-view/update-view";
+import { InputProjectView } from "../input-project-view/input-project-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
-import {Col, Row, Container, Button, Card, Form } from 'react-bootstrap';
+import { Col, Row, Form } from 'react-bootstrap';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 export const MainView = () => {
@@ -46,37 +45,6 @@ export const MainView = () => {
       <Row className="justify-content-md-center">
         <Routes>
           <Route
-            path="/signup"
-            element={
-              <>
-                {user ? (
-                  <Navigate to="/" />
-                ) : (
-                  <Col md={5}>
-                    <SignupView />
-                  </Col>
-                )}
-              </>
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <>
-                {user ? (
-                  <Navigate to="/" />
-                ) : (
-                  <Col md={5}>
-                    <LoginView onLoggedIn={(user, token) => {
-                        setUser(user);
-                        setToken(token);
-                      }} />
-                  </Col>
-                )}
-              </>
-            }
-          />
-          <Route
             path="/"
             element={
               <>
@@ -115,12 +83,46 @@ export const MainView = () => {
             }
           />
           <Route
+            path="/login"
+            element={
+              <>
+                {user ? (
+                  <Navigate to="/" />
+                ) : (
+                  <Col md={5}>
+                    <LoginView onLoggedIn={(user, token) => {
+                        setUser(user);
+                        setToken(token);
+                      }} />
+                  </Col>
+                )}
+              </>
+            }
+          />
+          <Route
             path="/projects/:projectID"
             element={
               <>
                 {!user ? (<Navigate to="/login" replace />) : (
                   <Col md={12}>
                     <ProjectView 
+                      user={user} 
+                      token={token} 
+                      setUser={setUser} 
+                      projects={projects}
+                    />
+                  </Col>
+                )}
+              </>
+            }
+          />
+          <Route
+            path="/input-project"
+            element={
+              <>
+                {!user ? (<Navigate to="/login" replace />) : (
+                  <Col md={12}>
+                    <InputProjectView 
                       user={user} 
                       token={token} 
                       setUser={setUser} 
