@@ -27223,7 +27223,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../project-card/project-card":"jqwUA","../navigation-bar/navigation-bar":"bsPVM","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../project-view/project-view":"76HlC","react-bootstrap":"3AD9A","../login-view/login-view":"9YtA0"}],"jqwUA":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../project-card/project-card":"jqwUA","../navigation-bar/navigation-bar":"bsPVM","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../project-view/project-view":"76HlC","react-bootstrap":"3AD9A","../login-view/login-view":"9YtA0","../input-project-view/input-project-view":"k4wQj"}],"jqwUA":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$d8de = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41458,11 +41458,12 @@ var _bootstrapMinCss = require("bootstrap/dist/css/bootstrap.min.css");
 var _indexScss = require("../../index.scss");
 const NavigationBar = ({ user, onLoggedOut })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar), {
-        bg: "light",
+        class: "navbar-custom",
         expand: "lg",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Brand, {
+                    class: "navbar-text",
                     children: "NV5 Project Database"
                 }, void 0, false, {
                     fileName: "src/components/navigation-bar/navigation-bar.jsx",
@@ -41504,11 +41505,20 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                         columnNumber: 17
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                        as: (0, _reactRouterDom.Link),
+                                        to: "/input-project",
+                                        children: "Create"
+                                    }, void 0, false, {
+                                        fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                        lineNumber: 26,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
                                         onClick: onLoggedOut,
                                         children: "Logout"
                                     }, void 0, false, {
                                         fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                        lineNumber: 28,
+                                        lineNumber: 27,
                                         columnNumber: 17
                                     }, undefined)
                                 ]
@@ -41864,6 +41874,332 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lJZlQ":[function() {},{}]},["5qIsR","1xC6H","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"k4wQj":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8956 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8956.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "InputProjectView", ()=>InputProjectView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+const InputProjectView = ()=>{
+    _s();
+    const [title, setTitle] = (0, _react.useState)("");
+    const [projectnumber, setProjectNumber] = (0, _react.useState)("");
+    const [description, setDescription] = (0, _react.useState)("");
+    const [keywords, setKeywords] = (0, _react.useState)("");
+    const [filelocation, setFileLocation] = (0, _react.useState)("");
+    const [projectmanager, setProjectManager] = (0, _react.useState)("");
+    const [projectstaff, setProjectStaff] = (0, _react.useState)("");
+    const [systems_and_equipment, setSystems_and_Equipment] = (0, _react.useState)("");
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+        const data = {
+            Title: title,
+            ProjectNumber: projectnumber,
+            Description: description,
+            Keywords: keywords,
+            FileLocation: filelocation,
+            ProjectManager: projectmanager,
+            ProjectStaff: projectstaff,
+            Systems_and_Equipment: systems_and_equipment
+        };
+        fetch("https://blooming-gorge-72776-95bc6a7cbd30.herokuapp.com/input-project", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then((response)=>{
+            if (response.ok) {
+                alert("Project Entry Successful");
+                window.location.reload();
+            } else alert("Project Entry Failed");
+        });
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
+                    onSubmit: handleSubmit,
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                            controlId: "formTitle",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                    children: "Title:"
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 54,
+                                    columnNumber: 21
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                    type: "text",
+                                    value: title,
+                                    onChange: (e)=>setTitle(e.target.value),
+                                    required: true,
+                                    minLength: "1"
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 55,
+                                    columnNumber: 21
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/input-project-view/input-project-view.jsx",
+                            lineNumber: 53,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                            controlId: "formProjectNumber",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                    children: "Project Number:"
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 64,
+                                    columnNumber: 21
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                    type: "text",
+                                    value: projectnumber,
+                                    onChange: (e)=>setProjectNumber(e.target.value),
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 65,
+                                    columnNumber: 21
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/input-project-view/input-project-view.jsx",
+                            lineNumber: 63,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                            controlId: "formDescription",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                    children: "Description:"
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 73,
+                                    columnNumber: 21
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                    type: "text",
+                                    value: description,
+                                    onChange: (e)=>setDescription(e.target.value),
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 74,
+                                    columnNumber: 21
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/input-project-view/input-project-view.jsx",
+                            lineNumber: 72,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                            controlId: "formKeywords",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                    children: "Keywords:"
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 82,
+                                    columnNumber: 21
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                    type: "text",
+                                    value: keywords,
+                                    onChange: (e)=>setKeywords(e.target.value),
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 83,
+                                    columnNumber: 21
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/input-project-view/input-project-view.jsx",
+                            lineNumber: 81,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                            controlId: "formFileLocation",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                    children: "File Location:"
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 91,
+                                    columnNumber: 21
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                    type: "text",
+                                    value: filelocation,
+                                    onChange: (e)=>setFileLocation(e.target.value),
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 92,
+                                    columnNumber: 21
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/input-project-view/input-project-view.jsx",
+                            lineNumber: 90,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                            controlId: "formProjectManager",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                    children: "Project Manager:"
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 100,
+                                    columnNumber: 21
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                    type: "text",
+                                    value: projectmanager,
+                                    onChange: (e)=>setProjectManager(e.target.value),
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 101,
+                                    columnNumber: 21
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/input-project-view/input-project-view.jsx",
+                            lineNumber: 99,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                            controlId: "formProjectStaff",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                    children: "Project Staff:"
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 109,
+                                    columnNumber: 21
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                    type: "text",
+                                    value: projectstaff,
+                                    onChange: (e)=>setProjectStaff(e.target.value),
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 110,
+                                    columnNumber: 21
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/input-project-view/input-project-view.jsx",
+                            lineNumber: 108,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                            controlId: "formSystems_and_Equipment",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                    children: "Systems and Equipment:"
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 118,
+                                    columnNumber: 21
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                    type: "text",
+                                    value: systems_and_equipment,
+                                    onChange: (e)=>setSystems_and_Equipment(e.target.value),
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                                    lineNumber: 119,
+                                    columnNumber: 21
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/input-project-view/input-project-view.jsx",
+                            lineNumber: 117,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                            variant: "primary",
+                            type: "submit",
+                            children: "Submit"
+                        }, void 0, false, {
+                            fileName: "src/components/input-project-view/input-project-view.jsx",
+                            lineNumber: 126,
+                            columnNumber: 17
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                    lineNumber: 52,
+                    columnNumber: 13
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/input-project-view/input-project-view.jsx",
+                lineNumber: 51,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                    to: "/",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                        variant: "primary",
+                        type: "back-button",
+                        children: "Back"
+                    }, void 0, false, {
+                        fileName: "src/components/input-project-view/input-project-view.jsx",
+                        lineNumber: 133,
+                        columnNumber: 17
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/components/input-project-view/input-project-view.jsx",
+                    lineNumber: 132,
+                    columnNumber: 13
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/input-project-view/input-project-view.jsx",
+                lineNumber: 131,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/input-project-view/input-project-view.jsx",
+        lineNumber: 50,
+        columnNumber: 5
+    }, undefined);
+};
+_s(InputProjectView, "xQBLMvPH8jw5LqNjUUoz1Tvgpic=");
+_c = InputProjectView;
+var _c;
+$RefreshReg$(_c, "InputProjectView");
+
+  $parcel$ReactRefreshHelpers$8956.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap":"3AD9A","react-router-dom":"9xmpe"}],"lJZlQ":[function() {},{}]},["5qIsR","1xC6H","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

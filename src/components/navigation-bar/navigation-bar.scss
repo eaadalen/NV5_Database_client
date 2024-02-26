@@ -1,7 +1,22 @@
-.Navbar {
+.navbar-custom {
     padding: 4px 12px 4px 12px;
     border: none;
-    color:  rgb(42, 98, 145);
-    background-color: rgb(42, 98, 145);
+    background-color: rgb(0, 0, 0);
     border-radius: 4px;
+}
+
+.navbar-text {
+    color: white;
+}
+
+/* Modify the background color */
+         
+.navbar-custom {
+    background-color: lightgreen;
+}
+/* Modify brand and text color */
+ 
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: green;
 }
