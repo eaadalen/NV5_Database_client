@@ -41636,7 +41636,6 @@ var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
-var _movieViewScss = require("../movie-view/movie-view.scss");
 var _s = $RefreshSig$();
 const UpdateView = ({ user })=>{
     _s();
@@ -41680,17 +41679,17 @@ const UpdateView = ({ user })=>{
                         children: "Back"
                     }, void 0, false, {
                         fileName: "src/components/profile-view/update-view.jsx",
-                        lineNumber: 53,
+                        lineNumber: 52,
                         columnNumber: 17
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/profile-view/update-view.jsx",
-                    lineNumber: 52,
+                    lineNumber: 51,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/profile-view/update-view.jsx",
-                lineNumber: 51,
+                lineNumber: 50,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -41704,7 +41703,7 @@ const UpdateView = ({ user })=>{
                                     children: "New Username:"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 61,
+                                    lineNumber: 60,
                                     columnNumber: 17
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -41715,13 +41714,13 @@ const UpdateView = ({ user })=>{
                                     minLength: "3"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 62,
+                                    lineNumber: 61,
                                     columnNumber: 17
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/profile-view/update-view.jsx",
-                            lineNumber: 60,
+                            lineNumber: 59,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -41731,7 +41730,7 @@ const UpdateView = ({ user })=>{
                                     children: "New Password:"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 71,
+                                    lineNumber: 70,
                                     columnNumber: 17
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -41741,13 +41740,13 @@ const UpdateView = ({ user })=>{
                                     required: true
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 72,
+                                    lineNumber: 71,
                                     columnNumber: 17
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/profile-view/update-view.jsx",
-                            lineNumber: 70,
+                            lineNumber: 69,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -41757,7 +41756,7 @@ const UpdateView = ({ user })=>{
                                     children: "New Email:"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 80,
+                                    lineNumber: 79,
                                     columnNumber: 17
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -41767,13 +41766,13 @@ const UpdateView = ({ user })=>{
                                     required: true
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 81,
+                                    lineNumber: 80,
                                     columnNumber: 17
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/profile-view/update-view.jsx",
-                            lineNumber: 79,
+                            lineNumber: 78,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -41783,7 +41782,7 @@ const UpdateView = ({ user })=>{
                                     children: "New Birthday:"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 89,
+                                    lineNumber: 88,
                                     columnNumber: 17
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -41793,13 +41792,13 @@ const UpdateView = ({ user })=>{
                                     required: true
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 90,
+                                    lineNumber: 89,
                                     columnNumber: 17
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/profile-view/update-view.jsx",
-                            lineNumber: 88,
+                            lineNumber: 87,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -41808,24 +41807,24 @@ const UpdateView = ({ user })=>{
                             children: "Submit"
                         }, void 0, false, {
                             fileName: "src/components/profile-view/update-view.jsx",
-                            lineNumber: 97,
+                            lineNumber: 96,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/profile-view/update-view.jsx",
-                    lineNumber: 59,
+                    lineNumber: 58,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/profile-view/update-view.jsx",
-                lineNumber: 58,
+                lineNumber: 57,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/profile-view/update-view.jsx",
-        lineNumber: 50,
+        lineNumber: 49,
         columnNumber: 5
     }, undefined);
 };
@@ -41839,7 +41838,7 @@ $RefreshReg$(_c, "UpdateView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react-router":"dbWyW","react":"21dqq","react-bootstrap/Container":"hEdsw","react-bootstrap/Row":"cMC39","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","../movie-view/movie-view.scss":"jnlR5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jnlR5":[function() {},{}],"bsPVM":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react-router":"dbWyW","react":"21dqq","react-bootstrap/Container":"hEdsw","react-bootstrap/Row":"cMC39","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bsPVM":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$abf5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
