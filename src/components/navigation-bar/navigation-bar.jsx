@@ -5,9 +5,9 @@ import "../../index.scss";
 
 export const NavigationBar = ({ user, onLoggedOut }) => {
   return (
-    <Navbar class="navbar-custom" expand="lg">
+    <Navbar class="dark" expand="lg">
       <Container>
-        <Navbar.Brand class="navbar-text">
+        <Navbar.Brand>
           NV5 Project Database
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
