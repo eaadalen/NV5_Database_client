@@ -27048,53 +27048,56 @@ const MainView = ()=>{
         return newArr2;
     };
     const filter_projects = ()=>{
-        var filter_total = [];
-        var filter_total1 = [];
-        var filter_total2 = [];
-        var filter_total3 = [];
-        var filter_total4 = [];
-        var filter_total5 = [];
-        var filter_total6 = [];
-        var filter_title = [];
-        var filter_projectnumber = [];
-        var filter_description = [];
-        var filter_keywords = [];
-        var filter_filelocation = [];
-        var filter_projectmanager = [];
-        var filter_projectstaff = [];
-        var filter_systems_and_equipment = [];
-        filter_title = projects.filter((project)=>{
-            return search === "" ? false : project.Title.toLowerCase().includes(search.toLowerCase());
-        });
-        filter_projectnumber = projects.filter((project)=>{
-            return search === "" ? false : project.ProjectNumber.toLowerCase().includes(search.toLowerCase());
-        });
-        filter_description = projects.filter((project)=>{
-            return search === "" ? false : project.Description.toLowerCase().includes(search.toLowerCase());
-        });
-        filter_keywords = projects.filter((project)=>{
-            return search === "" ? false : project.Keywords.toLowerCase().includes(search.toLowerCase());
-        });
-        filter_filelocation = projects.filter((project)=>{
-            return search === "" ? false : project.FileLocation.toLowerCase().includes(search.toLowerCase());
-        });
-        filter_projectmanager = projects.filter((project)=>{
-            return search === "" ? false : project.ProjectManager.toLowerCase().includes(search.toLowerCase());
-        });
-        filter_projectstaff = projects.filter((project)=>{
-            return search === "" ? false : project.ProjectStaff.toLowerCase().includes(search.toLowerCase());
-        });
-        filter_systems_and_equipment = projects.filter((project)=>{
-            return search === "" ? false : project.Systems_and_Equipment.toLowerCase().includes(search.toLowerCase());
-        });
-        filter_total = append_arrays(filter_title, filter_projectnumber);
-        filter_total1 = append_arrays(filter_total, filter_description);
-        filter_total2 = append_arrays(filter_total1, filter_keywords);
-        filter_total3 = append_arrays(filter_total2, filter_filelocation);
-        filter_total4 = append_arrays(filter_total3, filter_projectmanager);
-        filter_total5 = append_arrays(filter_total4, filter_projectstaff);
-        filter_total6 = append_arrays(filter_total5, filter_systems_and_equipment);
-        return filter_total6;
+        if (search === "") return projects;
+        else {
+            var filter_total = [];
+            var filter_total1 = [];
+            var filter_total2 = [];
+            var filter_total3 = [];
+            var filter_total4 = [];
+            var filter_total5 = [];
+            var filter_total6 = [];
+            var filter_title = [];
+            var filter_projectnumber = [];
+            var filter_description = [];
+            var filter_keywords = [];
+            var filter_filelocation = [];
+            var filter_projectmanager = [];
+            var filter_projectstaff = [];
+            var filter_systems_and_equipment = [];
+            filter_title = projects.filter((project)=>{
+                return search === "" ? false : project.Title.toLowerCase().includes(search.toLowerCase());
+            });
+            filter_projectnumber = projects.filter((project)=>{
+                return search === "" ? false : project.ProjectNumber.toLowerCase().includes(search.toLowerCase());
+            });
+            filter_description = projects.filter((project)=>{
+                return search === "" ? false : project.Description.toLowerCase().includes(search.toLowerCase());
+            });
+            filter_keywords = projects.filter((project)=>{
+                return search === "" ? false : project.Keywords.toLowerCase().includes(search.toLowerCase());
+            });
+            filter_filelocation = projects.filter((project)=>{
+                return search === "" ? false : project.FileLocation.toLowerCase().includes(search.toLowerCase());
+            });
+            filter_projectmanager = projects.filter((project)=>{
+                return search === "" ? false : project.ProjectManager.toLowerCase().includes(search.toLowerCase());
+            });
+            filter_projectstaff = projects.filter((project)=>{
+                return search === "" ? false : project.ProjectStaff.toLowerCase().includes(search.toLowerCase());
+            });
+            filter_systems_and_equipment = projects.filter((project)=>{
+                return search === "" ? false : project.Systems_and_Equipment.toLowerCase().includes(search.toLowerCase());
+            });
+            filter_total = append_arrays(filter_title, filter_projectnumber);
+            filter_total1 = append_arrays(filter_total, filter_description);
+            filter_total2 = append_arrays(filter_total1, filter_keywords);
+            filter_total3 = append_arrays(filter_total2, filter_filelocation);
+            filter_total4 = append_arrays(filter_total3, filter_projectmanager);
+            filter_total5 = append_arrays(filter_total4, filter_projectstaff);
+            filter_total6 = append_arrays(filter_total5, filter_systems_and_equipment);
+            return filter_total6;
+        }
     };
     (0, _react.useEffect)(()=>{
         if (!token) return;
@@ -27119,18 +27122,18 @@ const MainView = ()=>{
                 }
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 162,
+                lineNumber: 166,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {}, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 171,
+                    lineNumber: 175,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 170,
+                lineNumber: 174,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -27145,13 +27148,13 @@ const MainView = ()=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 180,
+                                    lineNumber: 184,
                                     columnNumber: 19
                                 }, void 0) : projects.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     children: "The list is empty!"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 182,
+                                    lineNumber: 186,
                                     columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                     children: [
@@ -27168,12 +27171,12 @@ const MainView = ()=>{
                                                             onChange: handleCheckboxChange_all
                                                         }, void 0, false, {
                                                             fileName: "src/components/main-view/main-view.jsx",
-                                                            lineNumber: 188,
+                                                            lineNumber: 192,
                                                             columnNumber: 23
                                                         }, void 0)
                                                     }, void 0, false, {
                                                         fileName: "src/components/main-view/main-view.jsx",
-                                                        lineNumber: 187,
+                                                        lineNumber: 191,
                                                         columnNumber: 23
                                                     }, void 0),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27187,7 +27190,7 @@ const MainView = ()=>{
                                                                 onChange: handleCheckboxChange_title
                                                             }, void 0, false, {
                                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                                lineNumber: 197,
+                                                                lineNumber: 201,
                                                                 columnNumber: 25
                                                             }, void 0),
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Check, {
@@ -27198,13 +27201,13 @@ const MainView = ()=>{
                                                                 onChange: handleCheckboxChange_projectnumber
                                                             }, void 0, false, {
                                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                                lineNumber: 204,
+                                                                lineNumber: 208,
                                                                 columnNumber: 25
                                                             }, void 0)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "src/components/main-view/main-view.jsx",
-                                                        lineNumber: 196,
+                                                        lineNumber: 200,
                                                         columnNumber: 23
                                                     }, void 0),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27217,7 +27220,7 @@ const MainView = ()=>{
                                                                 onChange: handleCheckboxChange_description
                                                             }, void 0, false, {
                                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                                lineNumber: 213,
+                                                                lineNumber: 217,
                                                                 columnNumber: 25
                                                             }, void 0),
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Check, {
@@ -27228,13 +27231,13 @@ const MainView = ()=>{
                                                                 onChange: handleCheckboxChange_keywords
                                                             }, void 0, false, {
                                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                                lineNumber: 220,
+                                                                lineNumber: 224,
                                                                 columnNumber: 25
                                                             }, void 0)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "src/components/main-view/main-view.jsx",
-                                                        lineNumber: 212,
+                                                        lineNumber: 216,
                                                         columnNumber: 23
                                                     }, void 0),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27247,7 +27250,7 @@ const MainView = ()=>{
                                                                 onChange: handleCheckboxChange_filelocation
                                                             }, void 0, false, {
                                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                                lineNumber: 229,
+                                                                lineNumber: 233,
                                                                 columnNumber: 25
                                                             }, void 0),
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Check, {
@@ -27258,13 +27261,13 @@ const MainView = ()=>{
                                                                 onChange: handleCheckboxChange_projectmanager
                                                             }, void 0, false, {
                                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                                lineNumber: 236,
+                                                                lineNumber: 240,
                                                                 columnNumber: 25
                                                             }, void 0)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "src/components/main-view/main-view.jsx",
-                                                        lineNumber: 228,
+                                                        lineNumber: 232,
                                                         columnNumber: 23
                                                     }, void 0),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27277,7 +27280,7 @@ const MainView = ()=>{
                                                                 onChange: handleCheckboxChange_projectstaff
                                                             }, void 0, false, {
                                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                                lineNumber: 245,
+                                                                lineNumber: 249,
                                                                 columnNumber: 25
                                                             }, void 0),
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Check, {
@@ -27288,24 +27291,24 @@ const MainView = ()=>{
                                                                 onChange: handleCheckboxChange_systems_and_equipment
                                                             }, void 0, false, {
                                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                                lineNumber: 252,
+                                                                lineNumber: 256,
                                                                 columnNumber: 25
                                                             }, void 0)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "src/components/main-view/main-view.jsx",
-                                                        lineNumber: 244,
+                                                        lineNumber: 248,
                                                         columnNumber: 23
                                                     }, void 0)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 186,
+                                                lineNumber: 190,
                                                 columnNumber: 23
                                             }, void 0)
                                         }, void 0, false, {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 185,
+                                            lineNumber: 189,
                                             columnNumber: 21
                                         }, void 0),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
@@ -27317,17 +27320,17 @@ const MainView = ()=>{
                                                 placeholder: "Search..."
                                             }, void 0, false, {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 263,
+                                                lineNumber: 267,
                                                 columnNumber: 23
                                             }, void 0)
                                         }, void 0, false, {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 262,
+                                            lineNumber: 266,
                                             columnNumber: 21
                                         }, void 0),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {}, void 0, false, {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 271,
+                                            lineNumber: 275,
                                             columnNumber: 21
                                         }, void 0),
                                         filter_projects().map((project)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
@@ -27340,12 +27343,12 @@ const MainView = ()=>{
                                                     user: user
                                                 }, void 0, false, {
                                                     fileName: "src/components/main-view/main-view.jsx",
-                                                    lineNumber: 274,
+                                                    lineNumber: 278,
                                                     columnNumber: 25
                                                 }, void 0)
                                             }, project._id, false, {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 273,
+                                                lineNumber: 277,
                                                 columnNumber: 23
                                             }, void 0))
                                     ]
@@ -27353,7 +27356,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 175,
+                            lineNumber: 179,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27363,7 +27366,7 @@ const MainView = ()=>{
                                     to: "/"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 292,
+                                    lineNumber: 296,
                                     columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     md: 5,
@@ -27374,18 +27377,18 @@ const MainView = ()=>{
                                         }
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 295,
+                                        lineNumber: 299,
                                         columnNumber: 21
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 294,
+                                    lineNumber: 298,
                                     columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 287,
+                            lineNumber: 291,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27396,7 +27399,7 @@ const MainView = ()=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 308,
+                                    lineNumber: 312,
                                     columnNumber: 27
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     md: 12,
@@ -27407,18 +27410,18 @@ const MainView = ()=>{
                                         projects: projects
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 310,
+                                        lineNumber: 314,
                                         columnNumber: 21
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 309,
+                                    lineNumber: 313,
                                     columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 304,
+                            lineNumber: 308,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27429,7 +27432,7 @@ const MainView = ()=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 325,
+                                    lineNumber: 329,
                                     columnNumber: 27
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     md: 12,
@@ -27440,35 +27443,35 @@ const MainView = ()=>{
                                         projects: projects
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 327,
+                                        lineNumber: 331,
                                         columnNumber: 21
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 326,
+                                    lineNumber: 330,
                                     columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 321,
+                            lineNumber: 325,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 174,
+                    lineNumber: 178,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 173,
+                lineNumber: 177,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 161,
+        lineNumber: 165,
         columnNumber: 5
     }, undefined);
 }; /*
