@@ -89,84 +89,8 @@ export const MainView = () => {
           }}
         />
       <Row>
-      <p></p>
-      <Form>
-      <div className="d-flex justify-content-evenly">
-        <div>
-        <Form.Check
-            type="checkbox"
-            id={`all`}
-            label={`All`}
-            checked={isChecked_all}
-            onChange={handleCheckboxChange_all}
-          />
-        </div>
-        <div className="mb-3">
-          <Form.Check
-            type="checkbox"
-            id={`title`}
-            label={`Title`}
-            checked={isChecked_all || isChecked_title}
-            onChange={handleCheckboxChange_title}
-          />
-          <Form.Check
-            type="checkbox"
-            id={`projectnumber`}
-            label={`Project Number`}
-            checked={isChecked_all || isChecked_projectnumber}
-            onChange={handleCheckboxChange_projectnumber}
-          />
-        </div>
-        <div>
-          <Form.Check
-            type="checkbox"
-            id={`description`}
-            label={`Description`}
-            checked={isChecked_all || isChecked_description}
-            onChange={handleCheckboxChange_description}
-          />
-          <Form.Check
-            type="checkbox"
-            id={`keywords`}
-            label={`Keywords`}
-            checked={isChecked_all || isChecked_keywords}
-            onChange={handleCheckboxChange_keywords}
-          />
-        </div>
-        <div>
-          <Form.Check
-            type="checkbox"
-            id={`filelocation`}
-            label={`File Location`}
-            checked={isChecked_all || isChecked_filelocation}
-            onChange={handleCheckboxChange_filelocation}
-          />
-          <Form.Check
-            type="checkbox"
-            id={`projectmanager`}
-            label={`Project Manager`}
-            checked={isChecked_all || isChecked_projectmanager}
-            onChange={handleCheckboxChange_projectmanager}
-          />
-        </div>
-        <div>
-          <Form.Check
-            type="checkbox"
-            id={`projectstaff`}
-            label={`Project Staff`}
-            checked={isChecked_all || isChecked_projectstaff}
-            onChange={handleCheckboxChange_projectstaff}
-          />
-          <Form.Check
-            type="checkbox"
-            id={`systems_and_equipment`}
-            label={`Systems and Equipment`}
-            checked={isChecked_all || isChecked_systems_and_equipment}
-            onChange={handleCheckboxChange_systems_and_equipment}
-          />
-        </div>
-      </div>
-    </Form>
+        <p></p>
+        
       </Row>
       <Row className="justify-content-md-center">
         <Routes>
@@ -180,6 +104,83 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
+                    <Form>
+                      <div className="d-flex justify-content-evenly">
+                      <div>
+                      <Form.Check
+                          type="checkbox"
+                          id={`all`}
+                          label={`All`}
+                          checked={isChecked_all}
+                          onChange={handleCheckboxChange_all}
+                        />
+                      </div>
+                      <div className="mb-3">
+                        <Form.Check
+                          type="checkbox"
+                          id={`title`}
+                          label={`Title`}
+                          checked={isChecked_all || isChecked_title}
+                          onChange={handleCheckboxChange_title}
+                        />
+                        <Form.Check
+                          type="checkbox"
+                          id={`projectnumber`}
+                          label={`Project Number`}
+                          checked={isChecked_all || isChecked_projectnumber}
+                          onChange={handleCheckboxChange_projectnumber}
+                        />
+                      </div>
+                      <div>
+                        <Form.Check
+                          type="checkbox"
+                          id={`description`}
+                          label={`Description`}
+                          checked={isChecked_all || isChecked_description}
+                          onChange={handleCheckboxChange_description}
+                        />
+                        <Form.Check
+                          type="checkbox"
+                          id={`keywords`}
+                          label={`Keywords`}
+                          checked={isChecked_all || isChecked_keywords}
+                          onChange={handleCheckboxChange_keywords}
+                        />
+                      </div>
+                      <div>
+                        <Form.Check
+                          type="checkbox"
+                          id={`filelocation`}
+                          label={`File Location`}
+                          checked={isChecked_all || isChecked_filelocation}
+                          onChange={handleCheckboxChange_filelocation}
+                        />
+                        <Form.Check
+                          type="checkbox"
+                          id={`projectmanager`}
+                          label={`Project Manager`}
+                          checked={isChecked_all || isChecked_projectmanager}
+                          onChange={handleCheckboxChange_projectmanager}
+                        />
+                      </div>
+                      <div>
+                        <Form.Check
+                          type="checkbox"
+                          id={`projectstaff`}
+                          label={`Project Staff`}
+                          checked={isChecked_all || isChecked_projectstaff}
+                          onChange={handleCheckboxChange_projectstaff}
+                        />
+                        <Form.Check
+                          type="checkbox"
+                          id={`systems_and_equipment`}
+                          label={`Systems and Equipment`}
+                          checked={isChecked_all || isChecked_systems_and_equipment}
+                          onChange={handleCheckboxChange_systems_and_equipment}
+                        />
+                      </div>
+                      </div>
+                    </Form>
                     <Form>
                       <Form.Control 
                         className="mx-5 mx-md-0"
