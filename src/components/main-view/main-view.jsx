@@ -13,7 +13,7 @@ export const MainView = () => {
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [projects, setProjects] = useState([]);
-  const [search, setSearch] = useState(""); 
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     if (!token) {
@@ -46,6 +46,13 @@ export const MainView = () => {
       <p></p>
       <Form>
       <div className="d-flex justify-content-evenly">
+        <div>
+        <Form.Check
+            type="checkbox"
+            id={`all`}
+            label={`All`}
+          />
+        </div>
         <div key={`default-checkbox`} className="mb-3">
           <Form.Check
             type="checkbox"
@@ -199,11 +206,3 @@ export const MainView = () => {
     </BrowserRouter>
   );
 };
-
-/*
-project.Keywords.toLowerCase().includes(search.toLowerCase()) ||
-project.FileLocation.toLowerCase().includes(search.toLowerCase()) ||
-project.ProjectManager.toLowerCase().includes(search.toLowerCase()) ||
-project.ProjectStaff.toLowerCase().includes(search.toLowerCase()) ||
-project.Systems_and_Equipment.toLowerCase().includes(search.toLowerCase());
-*/
