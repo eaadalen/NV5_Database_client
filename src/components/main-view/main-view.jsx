@@ -36,6 +36,7 @@ export const MainView = () => {
   const handleCheckboxChange_systems_and_equipment = (e) => {setIsChecked_systems_and_equipment(e.target.checked);};
 
   const filter_projects = () => {
+    var filter_total = [];
     var filter_title = [];
     var filter_projectnumber = [];
 
@@ -54,6 +55,9 @@ export const MainView = () => {
         project.ProjectNumber.toLowerCase().includes(search.toLowerCase())
       )
     })
+
+    filter_title.concat(filter_projectnumber);
+
     
     var test = projects.filter((project) => { return search === "" ? project :
         project.Title.toLowerCase().includes(search.toLowerCase()) ||
@@ -66,7 +70,7 @@ export const MainView = () => {
         project.Systems_and_Equipment.toLowerCase().includes(search.toLowerCase());
       })
 
-    return test;
+    return filter_title;
   }
 
   useEffect(() => {
