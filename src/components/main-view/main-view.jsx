@@ -15,6 +15,52 @@ export const MainView = () => {
   const [projects, setProjects] = useState([]);
   const [search, setSearch] = useState("");
 
+  const [isChecked_all, setIsChecked_all] = useState(false);
+  const [isChecked_title, setIsChecked_title] = useState(false);
+  const [isChecked_projectnumber, setIsChecked_projectnumber] = useState(false);
+  const [isChecked_description, setIsChecked_description] = useState(false);
+  const [isChecked_keywords, setIsChecked_keywords] = useState(false);
+  const [isChecked_filelocation, setIsChecked_filelocation] = useState(false);
+  const [isChecked_projectmanager, setIsChecked_projectmanager] = useState(false);
+  const [isChecked_projectstaff, setIsChecked_projectstaff] = useState(false);
+  const [isChecked_systems_and_equipment, setIsChecked_systems_and_equipment] = useState(false);
+
+  const handleCheckboxChange_all = (e) => {
+    setIsChecked_all(e.target.checked);
+  };
+
+  const handleCheckboxChange_title = (e) => {
+    setIsChecked_title(e.target.checked);
+  };
+
+  const handleCheckboxChange_projectnumber = (e) => {
+    setIsChecked_projectnumber(e.target.checked);
+  };
+
+  const handleCheckboxChange_description = (e) => {
+    setIsChecked_description(e.target.checked);
+  };
+
+  const handleCheckboxChange_keywords = (e) => {
+    setIsChecked_keywords(e.target.checked);
+  };
+
+  const handleCheckboxChange_filelocation = (e) => {
+    setIsChecked_filelocation(e.target.checked);
+  };
+
+  const handleCheckboxChange_projectmanager = (e) => {
+    setIsChecked_projectmanager(e.target.checked);
+  };
+
+  const handleCheckboxChange_projectstaff = (e) => {
+    setIsChecked_projectstaff(e.target.checked);
+  };
+
+  const handleCheckboxChange_systems_and_equipment = (e) => {
+    setIsChecked_systems_and_equipment(e.target.checked);
+  };
+
   useEffect(() => {
     if (!token) {
       return;
@@ -51,6 +97,8 @@ export const MainView = () => {
             type="checkbox"
             id={`all`}
             label={`All`}
+            checked={isChecked_all}
+            onChange={handleCheckboxChange_all}
           />
         </div>
         <div className="mb-3">
@@ -58,11 +106,15 @@ export const MainView = () => {
             type="checkbox"
             id={`title`}
             label={`Title`}
+            checked={isChecked_all || isChecked_title}
+            onChange={handleCheckboxChange_title}
           />
           <Form.Check
             type="checkbox"
             id={`projectnumber`}
             label={`Project Number`}
+            checked={isChecked_all || isChecked_projectnumber}
+            onChange={handleCheckboxChange_projectnumber}
           />
         </div>
         <div>
@@ -70,11 +122,15 @@ export const MainView = () => {
             type="checkbox"
             id={`description`}
             label={`Description`}
+            checked={isChecked_all || isChecked_description}
+            onChange={handleCheckboxChange_description}
           />
           <Form.Check
             type="checkbox"
             id={`keywords`}
             label={`Keywords`}
+            checked={isChecked_all || isChecked_keywords}
+            onChange={handleCheckboxChange_keywords}
           />
         </div>
         <div>
@@ -82,11 +138,15 @@ export const MainView = () => {
             type="checkbox"
             id={`filelocation`}
             label={`File Location`}
+            checked={isChecked_all || isChecked_filelocation}
+            onChange={handleCheckboxChange_filelocation}
           />
           <Form.Check
             type="checkbox"
             id={`projectmanager`}
             label={`Project Manager`}
+            checked={isChecked_all || isChecked_projectmanager}
+            onChange={handleCheckboxChange_projectmanager}
           />
         </div>
         <div>
@@ -94,11 +154,15 @@ export const MainView = () => {
             type="checkbox"
             id={`projectstaff`}
             label={`Project Staff`}
+            checked={isChecked_all || isChecked_projectstaff}
+            onChange={handleCheckboxChange_projectstaff}
           />
           <Form.Check
             type="checkbox"
             id={`systems_and_equipment`}
             label={`Systems and Equipment`}
+            checked={isChecked_all || isChecked_systems_and_equipment}
+            onChange={handleCheckboxChange_systems_and_equipment}
           />
         </div>
       </div>
