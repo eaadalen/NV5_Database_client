@@ -18,6 +18,14 @@ export const ProjectView = ({ user, token, projects, setUser }) => {
         <span>{project.ProjectNumber}</span>
       </div>
       <div>
+        <span STYLE="font-weight:bold">Description: </span>
+        <span>{project.Description}</span>
+      </div>
+      <div>
+        <span STYLE="font-weight:bold">Keywords: </span>
+        <span>{project.Keywords}</span>
+      </div>
+      <div>
         <span STYLE="font-weight:bold">File Location: </span>
         <span>{project.FileLocation}</span>
       </div>

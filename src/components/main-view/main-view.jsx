@@ -42,7 +42,11 @@ export const MainView = () => {
             localStorage.clear();
           }}
         />
+        <Row>
+          
+        </Row>
       <Row className="justify-content-md-center">
+        <input type="checkbox" />
         <Routes>
           <Route
             path="/"
@@ -55,7 +59,7 @@ export const MainView = () => {
                 ) : (
                   <>
                     <Form>
-                      <Form.Control
+                      <Form.Control 
                         className="mx-5 mx-md-0"
                         type="search"
                         id="searchForm"
@@ -63,10 +67,15 @@ export const MainView = () => {
                         placeholder="Search..."
                       />
                     </Form>
-                    {projects.filter((project) => {
-                      return search === ""
-                      ? project
-                      : project.Title.toLowerCase().includes(search.toLowerCase());
+                    {projects.filter((project) => { return search === "" ? project :
+                      project.Title.toLowerCase().includes(search.toLowerCase()) ||
+                      project.ProjectNumber.toLowerCase().includes(search.toLowerCase()) ||
+                      project.Description.toLowerCase().includes(search.toLowerCase()) ||
+                      project.Keywords.toLowerCase().includes(search.toLowerCase()) ||
+                      project.FileLocation.toLowerCase().includes(search.toLowerCase()) ||
+                      project.ProjectManager.toLowerCase().includes(search.toLowerCase()) ||
+                      project.ProjectStaff.toLowerCase().includes(search.toLowerCase()) ||
+                      project.Systems_and_Equipment.toLowerCase().includes(search.toLowerCase());
                     }).map((project) => (
                       <Col className="mb-4" key={project._id} md={12}>
                         <ProjectCard 
@@ -138,3 +147,11 @@ export const MainView = () => {
     </BrowserRouter>
   );
 };
+
+/*
+project.Keywords.toLowerCase().includes(search.toLowerCase()) ||
+project.FileLocation.toLowerCase().includes(search.toLowerCase()) ||
+project.ProjectManager.toLowerCase().includes(search.toLowerCase()) ||
+project.ProjectStaff.toLowerCase().includes(search.toLowerCase()) ||
+project.Systems_and_Equipment.toLowerCase().includes(search.toLowerCase());
+*/
