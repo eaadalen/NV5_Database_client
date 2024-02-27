@@ -35,42 +35,109 @@ export const MainView = () => {
   const handleCheckboxChange_projectstaff = (e) => {setIsChecked_projectstaff(e.target.checked);};
   const handleCheckboxChange_systems_and_equipment = (e) => {setIsChecked_systems_and_equipment(e.target.checked);};
 
+  const append_arrays = (array1, array2) => {
+
+    var newArr1 = array1.slice();
+    var newArr2 = array2.slice();
+    var newArr3 = newArr1.filter(item => !newArr2.includes(item));
+
+    for (let i = 0; i < newArr3.length; i++) {
+      newArr2.push(newArr3[i]);
+    }
+
+    return newArr2
+  }
+
   const filter_projects = () => {
     var filter_total = [];
+    var filter_total1 = [];
+    var filter_total2 = [];
+    var filter_total3 = [];
+    var filter_total4 = [];
+    var filter_total5 = [];
+    var filter_total6 = [];
     var filter_title = [];
     var filter_projectnumber = [];
+    var filter_description = [];
+    var filter_keywords = [];
+    var filter_filelocation = [];
+    var filter_projectmanager = [];
+    var filter_projectstaff = [];
+    var filter_systems_and_equipment = [];
 
     filter_title = projects.filter((project) => { 
-        return (
-          search === "" ? 
-          project :
-          project.Title.toLowerCase().includes(search.toLowerCase())
-        )
-      })
+      return (
+        search === "" ? 
+        false :
+        project.Title.toLowerCase().includes(search.toLowerCase())
+      )
+    })
 
     filter_projectnumber = projects.filter((project) => { 
       return (
         search === "" ? 
-        project :
+        false :
         project.ProjectNumber.toLowerCase().includes(search.toLowerCase())
       )
     })
 
-    filter_title.concat(filter_projectnumber);
+    filter_description = projects.filter((project) => { 
+      return (
+        search === "" ? 
+        false :
+        project.Description.toLowerCase().includes(search.toLowerCase())
+      )
+    })
 
-    
-    var test = projects.filter((project) => { return search === "" ? project :
-        project.Title.toLowerCase().includes(search.toLowerCase()) ||
-        project.ProjectNumber.toLowerCase().includes(search.toLowerCase()) ||
-        project.Description.toLowerCase().includes(search.toLowerCase()) ||
-        project.Keywords.toLowerCase().includes(search.toLowerCase()) ||
-        project.FileLocation.toLowerCase().includes(search.toLowerCase()) ||
-        project.ProjectManager.toLowerCase().includes(search.toLowerCase()) ||
-        project.ProjectStaff.toLowerCase().includes(search.toLowerCase()) ||
-        project.Systems_and_Equipment.toLowerCase().includes(search.toLowerCase());
-      })
+    filter_keywords = projects.filter((project) => { 
+      return (
+        search === "" ? 
+        false :
+        project.Keywords.toLowerCase().includes(search.toLowerCase())
+      )
+    })
 
-    return filter_title;
+    filter_filelocation = projects.filter((project) => { 
+      return (
+        search === "" ? 
+        false :
+        project.FileLocation.toLowerCase().includes(search.toLowerCase())
+      )
+    })
+
+    filter_projectmanager = projects.filter((project) => { 
+      return (
+        search === "" ? 
+        false :
+        project.ProjectManager.toLowerCase().includes(search.toLowerCase())
+      )
+    })
+
+    filter_projectstaff = projects.filter((project) => { 
+      return (
+        search === "" ? 
+        false :
+        project.ProjectStaff.toLowerCase().includes(search.toLowerCase())
+      )
+    })
+
+    filter_systems_and_equipment = projects.filter((project) => { 
+      return (
+        search === "" ? 
+        false :
+        project.Systems_and_Equipment.toLowerCase().includes(search.toLowerCase())
+      )
+    })
+
+    filter_total = append_arrays(filter_title, filter_projectnumber);
+    filter_total1 = append_arrays(filter_total, filter_description);
+    filter_total2 = append_arrays(filter_total1, filter_keywords);
+    filter_total3 = append_arrays(filter_total2, filter_filelocation);
+    filter_total4 = append_arrays(filter_total3, filter_projectmanager);
+    filter_total5 = append_arrays(filter_total4, filter_projectstaff);
+    filter_total6 = append_arrays(filter_total5, filter_systems_and_equipment);
+
+    return filter_total6;
   }
 
   useEffect(() => {
@@ -273,3 +340,68 @@ export const MainView = () => {
     </BrowserRouter>
   );
 };
+
+/*
+var filter_description = [];
+    var filter_keywords = [];
+    var filter_filelocation = [];
+    var filter_projectmanager = [];
+    var filter_projectstaff = [];
+    var filter_systems_and_equipment = [];
+
+    filter_description = projects.filter((project) => { 
+      return (
+        search === "" ? 
+        false :
+        project.Description.toLowerCase().includes(search.toLowerCase())
+      )
+    })
+
+    filter_keywords = projects.filter((project) => { 
+      return (
+        search === "" ? 
+        false :
+        project.Keywords.toLowerCase().includes(search.toLowerCase())
+      )
+    })
+
+    filter_filelocation = projects.filter((project) => { 
+      return (
+        search === "" ? 
+        false :
+        project.FileLocation.toLowerCase().includes(search.toLowerCase())
+      )
+    })
+
+    filter_projectmanager = projects.filter((project) => { 
+      return (
+        search === "" ? 
+        false :
+        project.ProjectManager.toLowerCase().includes(search.toLowerCase())
+      )
+    })
+
+    filter_projectnumber = projects.filter((project) => { 
+      return (
+        search === "" ? 
+        false :
+        project.ProjectNumber.toLowerCase().includes(search.toLowerCase())
+      )
+    })
+
+    filter_projectstaff = projects.filter((project) => { 
+      return (
+        search === "" ? 
+        false :
+        project.ProjectStaff.toLowerCase().includes(search.toLowerCase())
+      )
+    })
+
+    filter_systems_and_equipment = projects.filter((project) => { 
+      return (
+        search === "" ? 
+        false :
+        project.Systems_and_Equipment.toLowerCase().includes(search.toLowerCase())
+      )
+    })
+*/
