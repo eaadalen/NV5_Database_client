@@ -123,12 +123,14 @@ export const InputProjectView = () => {
                     required
                     />
                 </Form.Group>
+                <p></p>
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
             </Form>
         </Row>
         <Row>
+            <p></p>
             <Link to={"/"}>
                 <Button variant="primary" type="back-button">
                     Back

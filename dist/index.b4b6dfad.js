@@ -42173,12 +42173,17 @@ const LoginView = ({ onLoggedIn })=>{
                 lineNumber: 57,
                 columnNumber: 7
             }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {}, void 0, false, {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 66,
+                columnNumber: 7
+            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 className: "update-button",
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 66,
+                lineNumber: 67,
                 columnNumber: 7
             }, undefined)
         ]
@@ -42465,13 +42470,18 @@ const InputProjectView = ()=>{
                             lineNumber: 117,
                             columnNumber: 17
                         }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {}, void 0, false, {
+                            fileName: "src/components/input-project-view/input-project-view.jsx",
+                            lineNumber: 126,
+                            columnNumber: 17
+                        }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                             variant: "primary",
                             type: "submit",
                             children: "Submit"
                         }, void 0, false, {
                             fileName: "src/components/input-project-view/input-project-view.jsx",
-                            lineNumber: 126,
+                            lineNumber: 127,
                             columnNumber: 17
                         }, undefined)
                     ]
@@ -42486,25 +42496,32 @@ const InputProjectView = ()=>{
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                    to: "/",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                        variant: "primary",
-                        type: "back-button",
-                        children: "Back"
-                    }, void 0, false, {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {}, void 0, false, {
                         fileName: "src/components/input-project-view/input-project-view.jsx",
                         lineNumber: 133,
-                        columnNumber: 17
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                            variant: "primary",
+                            type: "back-button",
+                            children: "Back"
+                        }, void 0, false, {
+                            fileName: "src/components/input-project-view/input-project-view.jsx",
+                            lineNumber: 135,
+                            columnNumber: 17
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/input-project-view/input-project-view.jsx",
+                        lineNumber: 134,
+                        columnNumber: 13
                     }, undefined)
-                }, void 0, false, {
-                    fileName: "src/components/input-project-view/input-project-view.jsx",
-                    lineNumber: 132,
-                    columnNumber: 13
-                }, undefined)
-            }, void 0, false, {
+                ]
+            }, void 0, true, {
                 fileName: "src/components/input-project-view/input-project-view.jsx",
-                lineNumber: 131,
+                lineNumber: 132,
                 columnNumber: 9
             }, undefined)
         ]
