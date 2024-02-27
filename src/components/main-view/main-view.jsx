@@ -25,41 +25,49 @@ export const MainView = () => {
   const [isChecked_projectstaff, setIsChecked_projectstaff] = useState(false);
   const [isChecked_systems_and_equipment, setIsChecked_systems_and_equipment] = useState(false);
 
-  const handleCheckboxChange_all = (e) => {
-    setIsChecked_all(e.target.checked);
-  };
+  const handleCheckboxChange_all = (e) => {setIsChecked_all(e.target.checked);};
+  const handleCheckboxChange_title = (e) => {setIsChecked_title(e.target.checked);};
+  const handleCheckboxChange_projectnumber = (e) => {setIsChecked_projectnumber(e.target.checked);};
+  const handleCheckboxChange_description = (e) => {setIsChecked_description(e.target.checked);};
+  const handleCheckboxChange_keywords = (e) => {setIsChecked_keywords(e.target.checked);};
+  const handleCheckboxChange_filelocation = (e) => {setIsChecked_filelocation(e.target.checked);};
+  const handleCheckboxChange_projectmanager = (e) => {setIsChecked_projectmanager(e.target.checked);};
+  const handleCheckboxChange_projectstaff = (e) => {setIsChecked_projectstaff(e.target.checked);};
+  const handleCheckboxChange_systems_and_equipment = (e) => {setIsChecked_systems_and_equipment(e.target.checked);};
 
-  const handleCheckboxChange_title = (e) => {
-    setIsChecked_title(e.target.checked);
-  };
+  const filter_projects = () => {
+    var filter_title = [];
+    var filter_projectnumber = [];
 
-  const handleCheckboxChange_projectnumber = (e) => {
-    setIsChecked_projectnumber(e.target.checked);
-  };
+    filter_title = projects.filter((project) => { 
+        return (
+          search === "" ? 
+          project :
+          project.Title.toLowerCase().includes(search.toLowerCase())
+        )
+      })
 
-  const handleCheckboxChange_description = (e) => {
-    setIsChecked_description(e.target.checked);
-  };
+    filter_projectnumber = projects.filter((project) => { 
+      return (
+        search === "" ? 
+        project :
+        project.ProjectNumber.toLowerCase().includes(search.toLowerCase())
+      )
+    })
+    
+    var test = projects.filter((project) => { return search === "" ? project :
+        project.Title.toLowerCase().includes(search.toLowerCase()) ||
+        project.ProjectNumber.toLowerCase().includes(search.toLowerCase()) ||
+        project.Description.toLowerCase().includes(search.toLowerCase()) ||
+        project.Keywords.toLowerCase().includes(search.toLowerCase()) ||
+        project.FileLocation.toLowerCase().includes(search.toLowerCase()) ||
+        project.ProjectManager.toLowerCase().includes(search.toLowerCase()) ||
+        project.ProjectStaff.toLowerCase().includes(search.toLowerCase()) ||
+        project.Systems_and_Equipment.toLowerCase().includes(search.toLowerCase());
+      })
 
-  const handleCheckboxChange_keywords = (e) => {
-    setIsChecked_keywords(e.target.checked);
-  };
-
-  const handleCheckboxChange_filelocation = (e) => {
-    setIsChecked_filelocation(e.target.checked);
-  };
-
-  const handleCheckboxChange_projectmanager = (e) => {
-    setIsChecked_projectmanager(e.target.checked);
-  };
-
-  const handleCheckboxChange_projectstaff = (e) => {
-    setIsChecked_projectstaff(e.target.checked);
-  };
-
-  const handleCheckboxChange_systems_and_equipment = (e) => {
-    setIsChecked_systems_and_equipment(e.target.checked);
-  };
+    return test;
+  }
 
   useEffect(() => {
     if (!token) {
@@ -90,7 +98,6 @@ export const MainView = () => {
         />
       <Row>
         <p></p>
-        
       </Row>
       <Row className="justify-content-md-center">
         <Routes>
@@ -191,16 +198,7 @@ export const MainView = () => {
                       />
                     </Form>
                     <p></p>
-                    {projects.filter((project) => { return search === "" ? project :
-                      project.Title.toLowerCase().includes(search.toLowerCase()) ||
-                      project.ProjectNumber.toLowerCase().includes(search.toLowerCase()) ||
-                      project.Description.toLowerCase().includes(search.toLowerCase()) ||
-                      project.Keywords.toLowerCase().includes(search.toLowerCase()) ||
-                      project.FileLocation.toLowerCase().includes(search.toLowerCase()) ||
-                      project.ProjectManager.toLowerCase().includes(search.toLowerCase()) ||
-                      project.ProjectStaff.toLowerCase().includes(search.toLowerCase()) ||
-                      project.Systems_and_Equipment.toLowerCase().includes(search.toLowerCase());
-                    }).map((project) => (
+                    {filter_projects().map((project) => (
                       <Col className="mb-4" key={project._id} md={12}>
                         <ProjectCard 
                           project={project}
