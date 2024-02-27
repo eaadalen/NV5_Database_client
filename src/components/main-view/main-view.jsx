@@ -42,11 +42,62 @@ export const MainView = () => {
             localStorage.clear();
           }}
         />
-        <Row>
-          
-        </Row>
+      <Row>
+      <p></p>
+      <Form>
+      <div className="d-flex justify-content-evenly">
+        <div key={`default-checkbox`} className="mb-3">
+          <Form.Check
+            type="checkbox"
+            id={`title`}
+            label={`Title`}
+          />
+          <Form.Check
+            type="checkbox"
+            id={`projectnumber`}
+            label={`Project Number`}
+          />
+        </div>
+        <div>
+          <Form.Check
+            type="checkbox"
+            id={`description`}
+            label={`Description`}
+          />
+          <Form.Check
+            type="checkbox"
+            id={`keywords`}
+            label={`Keywords`}
+          />
+        </div>
+        <div>
+          <Form.Check
+            type="checkbox"
+            id={`filelocation`}
+            label={`File Location`}
+          />
+          <Form.Check
+            type="checkbox"
+            id={`projectmanager`}
+            label={`Project Manager`}
+          />
+        </div>
+        <div>
+          <Form.Check
+            type="checkbox"
+            id={`projectstaff`}
+            label={`Project Staff`}
+          />
+          <Form.Check
+            type="checkbox"
+            id={`systems_and_equipment`}
+            label={`Systems and Equipment`}
+          />
+        </div>
+      </div>
+    </Form>
+      </Row>
       <Row className="justify-content-md-center">
-        <input type="checkbox" />
         <Routes>
           <Route
             path="/"
@@ -67,6 +118,7 @@ export const MainView = () => {
                         placeholder="Search..."
                       />
                     </Form>
+                    <p></p>
                     {projects.filter((project) => { return search === "" ? project :
                       project.Title.toLowerCase().includes(search.toLowerCase()) ||
                       project.ProjectNumber.toLowerCase().includes(search.toLowerCase()) ||
