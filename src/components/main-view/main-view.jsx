@@ -53,7 +53,7 @@ export const MainView = () => {
             label={`All`}
           />
         </div>
-        <div key={`default-checkbox`} className="mb-3">
+        <div className="mb-3">
           <Form.Check
             type="checkbox"
             id={`title`}

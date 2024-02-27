@@ -27078,7 +27078,7 @@ const MainView = ()=>{
                                             columnNumber: 11
                                         }, undefined)
                                     ]
-                                }, `default-checkbox`, true, {
+                                }, void 0, true, {
                                     fileName: "src/components/main-view/main-view.jsx",
                                     lineNumber: 56,
                                     columnNumber: 9
