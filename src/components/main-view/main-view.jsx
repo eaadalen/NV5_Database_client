@@ -179,7 +179,7 @@ export const MainView = () => {
     }
 
     fetch(
-      "https://spelling-game-ef1de28a171a.herokuapp.com",
+      "https://blooming-gorge-72776-95bc6a7cbd30.herokuapp.com/projects",
       {
         headers: { Authorization: `Bearer ${token}` }
       }
