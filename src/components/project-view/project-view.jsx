@@ -41,6 +41,7 @@ export const ProjectView = ({ user, token, projects, setUser }) => {
         <span STYLE="font-weight:bold">Systems/Equipment Used: </span>
         <span>{project.Systems_and_Equipment}</span>
       </div>
+      <p></p>
       <Link to={`/`}>
         <button className="back-button">Back</button>
       </Link>
